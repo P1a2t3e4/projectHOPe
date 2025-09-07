@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EcoRabbits Revolution - Transforming lives through sustainable rabbit farming in Ghana. Project HOPe empowers youth with innovative agricultural solutions.">
+  <meta name="keywords" content="rabbit farming, Ghana, youth employment, sustainable agriculture, EcoRabbits Revolution">
+  <title>EcoRabbits Revolution - Sustainable Rabbit Farming Solutions</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+:root {
+  --primary-green: #107a5d;
+  --accent-orange: #ff9f1a;
+  --white: #ffffff;
+  --dark: #1a1a1a;
+  --gray-light: #f8f9fa;
+  --gray-medium: #6c757d;
+  --green-light: rgba(16, 122, 93, 0.1);
+  --orange-light: rgba(255, 159, 26, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  color: var(--dark);
+  overflow-x: hidden;
+  /* Static gradient background */
+  background-image: 
+    linear-gradient(135deg, rgba(16, 122, 93, 0.3) 0%, rgba(255, 159, 26, 0.4) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Moving rabbit background layer */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://img.freepik.com/premium-photo/white-rabbit-sits-grass-front-green-background_865967-3031.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -1;
+  animation: rabbitMove 25s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Rabbit image movement animation */
+@keyframes rabbitMove {
+  0% { 
+    background-position: 50% 50%;
+    transform: scale(1.05);
+  }
+  25% { 
+    background-position: 45% 55%;
+    transform: scale(1.08) rotate(0.5deg);
+  }
+  50% { 
+    background-position: 55% 45%;
+    transform: scale(1.1) rotate(-0.3deg);
+  }
+  75% { 
+    background-position: 52% 58%;
+    transform: scale(1.07) rotate(0.2deg);
+  }
+  100% { 
+    background-position: 50% 50%;
+    transform: scale(1.05);
+  }
+}
+
+/* Subtle pattern overlay with movement */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+  animation: patternMove 15s ease-in-out infinite alternate;
+}
+
+@keyframes patternMove {
+  0% { 
+    transform: translateX(0px) translateY(0px) scale(1);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: translateX(20px) translateY(-15px) scale(1.1);
+    opacity: 0.2;
+  }
+  100% { 
+    transform: translateX(-10px) translateY(10px) scale(0.95);
+    opacity: 0.4;
+  }
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(16, 122, 93, 0.1);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+nav.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-green);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  background: linear-gradient(135deg, var(--primary-green), var(--accent-orange));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 122, 93, 0.3);
+}
+
+.cta-nav {
+  background: linear-gradient(135deg, var(--primary-green), var(--accent-orange));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cta-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 122, 93, 0.3);
+}
+
+/* Hero Section with enhanced movement */
+.hero {
+  background: rgba(16, 122, 93, 0.1);
+  backdrop-filter: blur(5px);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/><circle cx="50" cy="10" r="1" fill="white" opacity="0.05"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>'),
+    linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.03) 50%, transparent 70%);
+  opacity: 0.3;
+  animation: heroPatternMove 12s ease-in-out infinite;
+}
+
+/* Additional floating particles */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(2px 2px at 40% 70%, rgba(255, 159, 26, 0.3), transparent),
+    radial-gradient(1px 1px at 60% 15%, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 80% 50%, rgba(255, 255, 255, 0.1), transparent),
+    radial-gradient(2px 2px at 90% 40%, rgba(16, 122, 93, 0.3), transparent);
+  background-size: 200% 100%;
+  animation: particleFloat 25s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes heroPatternMove {
+  0%, 100% { 
+    transform: translateX(0%) translateY(0%) rotate(0deg);
+    opacity: 0.3;
+  }
+  33% { 
+    transform: translateX(2%) translateY(-1%) rotate(0.5deg);
+    opacity: 0.2;
+  }
+  66% { 
+    transform: translateX(-1%) translateY(2%) rotate(-0.3deg);
+    opacity: 0.4;
+  }
+}
+
+@keyframes particleFloat {
+  0% { 
+    transform: translateX(-100%) translateY(0%);
+  }
+  100% { 
+    transform: translateX(100%) translateY(-10%);
+  }
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-text .subtitle {
+  font-size: 1.3rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.stat-item {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: white;
+  color: var(--primary-green);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-visual {
+  position: relative;
+  animation: fadeInRight 1s ease-out 0.8s both;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, transparent, rgba(16, 122, 93, 0.1), transparent);
+  animation: rotate 6s linear infinite;
+}
+
+.hero-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-card h3 {
+  color: var(--primary-green);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Sections */
+.section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-subtitle {
+  color: var(--accent-orange);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-green);
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: var(--gray-medium);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Problem Statement */
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.problem-card {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--accent-orange);
+}
+
+.problem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.problem-card h3 {
+  color: var(--primary-green);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+/* Solutions */
+.solutions-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.solution-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--green-light);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateX(5px);
+  background: var(--orange-light);
+}
+
+.feature-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary-green), var(--accent-orange));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.solution-visual {
+  position: relative;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card .number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent-orange);
+  display: block;
+}
+
+.stat-card .label {
+  color: var(--gray-medium);
+  font-size: 0.9rem;
+}
+
+/* Timeline */
+.timeline-container {
+  position: relative;
+  margin: 3rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary-green), var(--accent-orange));
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  flex: 1;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 0 2rem;
+  position: relative;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+  right: -20px;
+  border-left-color: white;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+  left: -20px;
+  border-right-color: white;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: var(--accent-orange);
+  border: 4px solid white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 4px var(--green-light);
+}
+
+/* Gallery Styles */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 250px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  background: linear-gradient(45deg, var(--green-light), var(--orange-light));
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: white;
+  padding: 2rem 1.5rem 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+.gallery-overlay h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-overlay p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Enhanced Modal Styles for Full Screen Experience */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  position: relative;
+  margin: 2% auto;
+  padding: 0;
+  width: 95%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+  animation: modalSlideIn 0.4s ease-out;
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes modalSlideIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(-30px) scale(0.9); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+  }
+}
+
+.modal-content img {
+  width: 100%;
+  height: 70vh;
+  max-height: 600px;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px 20px 0 0;
+}
+
+.modal-info {
+  padding: 2.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 249, 250, 0.95));
+}
+
+.modal-info h3 {
+  color: var(--primary-green);
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-info p {
+  color: var(--gray-medium);
+  font-size: 1.3rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.7);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.close:hover {
+  background: var(--accent-orange);
+  transform: scale(1.1) rotate(90deg);
+  box-shadow: 0 8px 25px rgba(255, 159, 26, 0.4);
+}
+
+/* Team */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.team-member {
+  text-align: center;
+  background: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-member::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-orange));
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.team-photo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.team-photo img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.team-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 0.5rem;
+}
+
+.team-role {
+  color: var(--accent-orange);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.team-description {
+  color: var(--gray-medium);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+  background: rgba(16, 122, 93, 0.95);
+  backdrop-filter: blur(10px);
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+  margin: 4rem auto;
+  border-radius: 20px;
+  max-width: 1200px;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1), transparent),
+              radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1), transparent);
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.cta-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 2.5rem;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 600px;
+  margin: 3rem auto 0;
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-green);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e9ecef;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-green);
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, var(--primary-green), var(--accent-orange));
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(16, 122, 93, 0.3);
+}
+
+/* Footer */
+footer {
+  background: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  color: var(--accent-orange);
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: var(--accent-orange);
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: var(--gray-medium);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-stats {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .solutions-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .timeline-line {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: row !important;
+    padding-left: 3rem;
+  }
+
+  .timeline-content {
+    margin: 0 0 0 1rem;
+  }
+
+  .timeline-content::before {
+    display: none;
+  }
+
+  .timeline-dot {
+    left: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .section {
+    padding: 4rem 1rem;
+    margin: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 5% auto;
+  }
+  
+  .modal-content img {
+    height: 50vh;
+  }
+  
+  .modal-info {
+    padding: 1.5rem;
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">Project HOPe</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#impact">Impact</a></li>
+        <li><a href="#team">Team</a></li>
+        
+        <li><a href="#gallery">Project Gallery</a></li>
+      
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Transforming Lives Through Sustainable Rabbit Farming</h1>
+        <p class="subtitle">Empowering youth in Upper West Ghana with innovative agricultural solutions that create sustainable livelihoods and food security.</p>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">100</span>
+            <span class="stat-label">Youth to Train (Year 1)</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3000</span>
+            <span class="stat-label">Rabbits Target Production</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">GHS 450K</span>
+            <span class="stat-label">Projected Revenue</span>
+          </div>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#solutions" class="btn-primary">Discover Our Impact</a>
+        </div>
+      </div>
+      
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-content">
+            <h3>Project HOPe Goals</h3>
+            <div class="stats-grid">
+              <div class="stat-card">
+                <span class="number">19.7%</span>
+                <span class="label">Youth Unemployment Rate</span>
+              </div>
+              <div class="stat-card">
+                <span class="number">$300M</span>
+                <span class="label">Meat Import Value</span>
+              </div>
+              <div class="stat-card">
+                <span class="number">62%</span>
+                <span class="label">Population Under 25</span>
+              </div>
+              <div class="stat-card">
+                <span class="number">25</span>
+                <span class="label">Expected Kits Per Doe</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Statement -->
+  <section id="about" class="section">
+    <div class="section-header">
+     <div class="section-subtitle">About Project HOPe</div>
+     <h2 class="section-title">Addressing Youth Unemployment Through Innovation</h2>
+     <p class="section-description">
+       Project HOPe is a partnership initiative between EcoRabbits Revolution and North Farms designed to tackle the 19.7% youth unemployment challenge, particularly acute in the Upper West Region where limited opportunities and climate vulnerabilities affect rural communities.
+     </p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>🎯 Our Target Impact</h3>
+        <p>We aim to train and equip 100 youth in Year 1, with each doe expected to produce 20-30 kits annually. At GHS 150 per rabbit, beneficiaries can potentially generate substantial gross revenue and reinvest in expansion.</p>
+      </div>
+      
+      <div class="problem-card">
+        <h3>📊 Market Opportunity</h3>
+        <p>Ghana imports over $300 million worth of meat annually. Local rabbit production can capture this market by offering affordable, high-protein meat to urban consumers.</p>
+      </div>
+      
+      <div class="problem-card">
+        <h3>🐰 Why Rabbits Work</h3>
+        <p>Rabbits reproduce quickly, require minimal land, have low startup costs, and integrate seamlessly into homestead systems for diversified income and risk reduction.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions" class="section">
+    <div class="section-header">
+      <div class="section-subtitle">Our Approach</div>
+     <h2 class="section-title">Comprehensive Training & Support System</h2>
+     <p class="section-description">
+       Project HOPe will deliver practical training, starter inputs, technical mentorship, cooperative formation, and market linkages to create resilient, youth-led agribusinesses.
+     </p>
+    </div>
+
+    <div class="solutions-container">
+      <div class="solution-features">
+        <div class="feature-item">
+          <div class="feature-icon">🎓</div>
+          <div>
+            <h3>Intensive Training Program</h3>
+            <p>Planned intensive curriculum covering animal housing, biosecurity, reproductive management, feeding, disease recognition, record keeping, business planning, and market negotiation techniques.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">📦</div>
+          <div>
+            <h3>Complete Starter Kits</h3>
+           <p>Each beneficiary will receive: all-wire 6-room cage, breeding pair (1 buck + 1 doe), 10kg formulated grower feed, and hay bale designed for quick production cycles.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🤝</div>
+          <div>
+            <h3>Ongoing Mentorship</h3>
+            <p>Planned weekly remote follow-ups, monthly on-site visits, veterinary support, and cooperative formation to enable bulk procurement and coordinated marketing.</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="feature-icon">🏪</div>
+          <div>
+            <h3>Market Linkages</h3>
+            <p>Cooperative formation, buyer introductions, and supply contracts with hotels, restaurants, and retail outlets.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="solution-visual">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="number">GHS 150</span>
+            <span class="label">Price Per Rabbit</span>
+          </div>
+          <div class="stat-card">
+            <span class="number">GHS 3,750</span>
+            <span class="label">Annual Gross Revenue</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Implementation Timeline -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-subtitle">Implementation</div>
+      <h2 class="section-title">Our Proven 4-Phase Approach</h2>
+    </div>
+
+    <div class="timeline-container">
+      <div class="timeline-line"></div>
+      
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Phase 0: Foundation</h3>
+          <p>Stakeholder engagement, baseline surveys, and procurement of training materials and starter kit components.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Phase 1: Training</h3>
+          <p>Intensive 10-day practical training workshops with hands-on demonstrations and cage-building practicum.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Phase 2: Setup</h3>
+          <p>Starter kit distribution and comprehensive on-site setup support to ensure proper facility establishment.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Phase 3: Growth</h3>
+          <p>Ongoing mentorship, veterinary support, cooperative formation, and market linkage development.</p>
+        </div>
+        <div class="timeline-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact -->
+  <section id="impact" class="section">
+    <div class="section-header">
+      <div class="section-subtitle">Project HOPe Results</div>
+      <h2 class="section-title">Expected Outcomes and Impact</h2>
+      <p class="section-description">
+        Project HOPe aims to demonstrate the transformative potential of targeted agricultural interventions. Conservative estimates show significant revenue potential with built-in sustainability mechanisms.
+      </p>
+    </div>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h3>Year 1 Employment Target</h3>
+        <p>Aims to establish 100 youth-led rabbit enterprises with comprehensive training, starter kits, and ongoing support to ensure sustainable business operations.</p>
+      </div>
+      
+      <div class="problem-card">
+         <h3>Revenue Generation Potential</h3>
+        <p>Targets approximately 3,000 rabbits to be produced in Year 1. At GHS 150 per rabbit, potential gross revenue of GHS 450,000 across all beneficiaries.</p>
+      </div>
+      
+      <div class="problem-card">
+        <h3>Sustainability & Scale Goals</h3>
+        <p>Plans for revolving stock system, modest registration fees, and cooperative savings to ensure program sustainability while scaling to 1,000 youth over three years.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Gallery -->
+  <section id="gallery" class="section">
+  <div class="section-header">
+    <p class="section-subtitle">Gallery</p>
+    <h2 class="section-title">Project Gallery</h2>
+    <p class="section-description">Explore highlights from our EcoRabbits Revolution journey.</p>
+  </div>
+
+ 
+    <div class="gallery-grid">
+      <div class="gallery-item" onclick="openModal('https://rabbitcrewkenya.co.ke/wp-content/uploads/2024/11/training.jpg', 'Training Sessions', 'Hands-on learning with expert guidance')">
+        <img src="https://rabbitcrewkenya.co.ke/wp-content/uploads/2024/11/training.jpg" alt="Training Sessions">
+        <div class="gallery-overlay">
+          <h3>Training Sessions</h3>
+          <p>Hands-on learning with expert guidance</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openModal('https://tse3.mm.bing.net/th/id/OIP.LcaZeH3pWgUGGa8ds2Zi5wAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3', 'Modern Housing', 'All-wire 6-room cage systems')">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.LcaZeH3pWgUGGa8ds2Zi5wAAAA?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Modern Housing">
+        <div class="gallery-overlay">
+          <h3>Modern Housing</h3>
+          <p>All-wire 6-room cage systems</p>
+        </div>
+      </div>
+      
+      <div class="gallery-item" onclick="openModal('https://images.pexels.com/photos/3828097/pexels-photo-3828097.jpeg', 'Healthy Breeding Stock', 'Quality does and bucks for production')">
+        <img src="https://images.pexels.com/photos/3828097/pexels-photo-3828097.jpeg" alt="Healthy Breeding Stock">       
+        <div class="gallery-overlay">
+          <h3>Healthy Breeding Stock</h3>
+          <p>Quality does and bucks for production</p>
+        </div>
+      </div>
+
+      <div class="gallery-item" onclick="openModal('https://tse4.mm.bing.net/th/id/OIP.2mVSSZWqxhKaZ8TcRIQUZwHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3', 'Market Linkages', 'Connecting farmers to buyers')">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.2mVSSZWqxhKaZ8TcRIQUZwHaDt?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Market Linkages">
+        <div class="gallery-overlay">
+          <h3>Market Linkages</h3>
+          <p>Connecting farmers to buyers</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="">
+        <div class="modal-info">
+          <h3 id="modalTitle"></h3>
+          <p id="modalDescription"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  
+  <!-- Team -->
+  <section id="team" class="section">
+    <div class="section-header">
+      <div class="section-subtitle">Our Team</div>
+      <h2 class="section-title">Expert Leadership</h2>
+    </div>
+
+    <div class="team-grid">
+      <div class="team-member">
+        <div class="team-photo">
+          <img src="images/gabriel.jpg" alt="Gabriel Domoninge Naa">
+        </div>
+        <h3 class="team-name">Gabriel Domoninge Naa</h3>
+        <div class="team-role">Project Strategy & Partnerships</div>
+        <p class="team-description">
+          Gabriel leads project strategy, partnership development, and enterprise coaching with extensive experience in community-based programs and youth empowerment across northern Ghana.
+        </p>
+      </div>
+
+      <div class="team-member">
+        <div class="team-photo">
+          <img src="images/ezekiel.jpg" alt="Ezekiel Yeng">
+        </div>
+        <h3 class="team-name">Ezekiel Yeng</h3>
+        <div class="team-role">Technical Lead</div>
+        <p class="team-description">
+          Ezekiel serves as technical lead on rabbit production, training, and field support. His eight years of hands-on experience ensures beneficiaries receive practical, effective guidance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Transform Lives?</h2>
+      <p class="cta-subtitle">
+        Join us in empowering Ghana's youth through sustainable rabbit farming. Together, we can create lasting change and build prosperous communities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Project HOPe</h3>
+        <p>Harnessing Opportunities in Rabbit Farming for Employment. A partnership between EcoRabbits Revolution and North Farms creating sustainable livelihoods in Ghana.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#about">About Project HOPe</a></li>
+          <li><a href="#solutions">Our Methodology</a></li>
+          <li><a href="#impact">Expected Impact</a></li>
+          <li><a href="#team">Project Team</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <p>Upper West Region, Ghana</p>
+        <p>Email:domoningegabriel@gmail.com   
+                 yengezekiel2@gmail.com</p>
+        <p>Phone: : ‪+233550502984
+           ‪+233203548382
+        </p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>Partners</h3>
+        <p>EcoRabbits Revolution</p>
+        <p>North Farms</p>
+        <p>Local Community Associations</p>
+        <p>Veterinary Services</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Project HOPe. A partnership initiative for sustainable agriculture and youth employment</p>
+    </div>
+  </footer>
+
+  <script>
+    // Simple scroll effects
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Form submission handler
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for your interest! We will get back to you soon.');
+      this.reset();
+    });
+
+    // Modal functions
+    function openModal(imageSrc, title, description) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDescription = document.getElementById('modalDescription');
+      
+      modal.style.display = 'block';
+      modalImage.src = imageSrc;
+      modalTitle.textContent = title;
+      modalDescription.textContent = description;
+      
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById('imageModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
+</body>
+</html>
