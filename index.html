@@ -1086,7 +1086,54 @@ footer {
   .modal-info {
     padding: 1.5rem;
   }
+
+
+  
+
+  /* For tablets and smaller screens */
+@media (max-width: 992px) {
+  .hero-content {
+    grid-template-columns: 1fr; /* stack text and image */
+    text-align: center;
+  }
+
+  .hero-visual {
+    order: -1; /* move the visual above text if you want */
+  }
+
+  .nav-links {
+    display: none; /* hide desktop nav */
+  }
+
+  .mobile-menu-btn {
+    display: block; /* show mobile menu */
+  }
 }
+
+/* For phones */
+@media (max-width: 600px) {
+  .hero-text h1 {
+    font-size: 1.8rem; /* smaller headline */
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* stack buttons vertically */
+  }
+
+  .stat-item {
+    min-width: 100px;
+  }
+
+  .gallery-item {
+    height: 180px; /* reduce gallery height */
+  }
+}
+
+}
+
+
+
+
   </style>
 </head>
 <body>
@@ -1443,7 +1490,8 @@ footer {
         <p>Email:domoningegabriel@gmail.com   
                  yengezekiel2@gmail.com</p>
         <p>Phone: +233550502984, +233203548382</p>
-     
+
+        </p>
       </div>
       
       <div class="footer-section">
@@ -1530,5 +1578,4 @@ footer {
     });
   </script>
 </body>
-
 </html>
